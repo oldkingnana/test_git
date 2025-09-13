@@ -8,6 +8,7 @@ int main(int argc, char* argv[])
 	if(argc != 4)
 	{
 		std::cerr << "Too many options or few options!" << std::endl;
+		std::cerr << "argc: " << argc << std::endl;
 		exit(1);
 	}
 
@@ -18,6 +19,9 @@ int main(int argc, char* argv[])
 		break;
 	case '-':
 		std::cout << op.sub()(*argv[1] - '0', *argv[3] - '0') << std::endl;
+		break;
+	case '*':
+		std::cout << op.mul()(*argv[1] - '0', *argv[3] - '0') << std::endl;
 		break;
 	default:
 		std::cerr << "Oprator err!" << std::endl;

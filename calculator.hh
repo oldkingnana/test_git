@@ -3,6 +3,7 @@ namespace oldking
 {
 	class Add;
 	class Sub;
+	class Mul;
 
 	class Operation 
 	{
@@ -14,8 +15,10 @@ namespace oldking
 		const Add& add() const;
 		Sub& sub();
 		const Sub& sub() const;
+		Mul& mul();
+		const Mul& mul() const;
 	};
-
+	
 	class Add : public Operation
 	{
 	public:
@@ -30,6 +33,15 @@ namespace oldking
 	public:
 		Sub() = default;
 		~Sub() = default;
+
+		int operator()(const int& left, const int& right) const;	
+	};
+
+	class Mul : public Operation
+	{
+	public:
+		Mul() = default;
+		~Mul() = default;
 
 		int operator()(const int& left, const int& right) const;	
 	};

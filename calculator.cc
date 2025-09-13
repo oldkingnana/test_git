@@ -22,6 +22,19 @@ const oldking::Sub& oldking::Operation::sub() const
 }
 
 
+oldking::Mul& oldking::Operation::mul()
+{
+	return static_cast<oldking::Mul&>(*this);
+}
+	
+const oldking::Mul& oldking::Operation::mul() const 
+{
+	return static_cast<const oldking::Mul&>(*this);
+}
+
+
+
+
 int oldking::Add::operator()(const int& left, const int& right) const 
 {
 	return left + right;
@@ -32,4 +45,9 @@ int oldking::Sub::operator()(const int& left, const int& right) const
 	return left - right;
 }
 
+
+int oldking::Mul::operator()(const int& left, const int& right) const
+{
+	return left * right;
+}
 
