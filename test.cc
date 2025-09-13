@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
 		std::cout << op.mul()(*argv[1] - '0', *argv[3] - '0') << std::endl;
 		break;
 	case '/':
-		std::cout << op.mul()(*argv[1] - '0', *argv[3] - '0') << std::endl;
+		std::cout << op.div()(*argv[1] - '0', *argv[3] - '0') << std::endl;
 		break;
 	default:
 		std::cerr << "Oprator err!" << std::endl;
